@@ -1,0 +1,9 @@
+{% if latest_question %}
+    {% for q in latest_question %}
+        <ul>
+            <li><a href="{% url 'polls:detail' q.id %}">{{ q.question_text }}</a></li>
+        </ul>
+    {% endfor%}
+{% else %}
+        <p>No Questions Found.</p>
+{% endif %}
